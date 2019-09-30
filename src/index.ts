@@ -11,6 +11,9 @@ export const Multiply = (a : number, b : number) => {
 };
 
 export const Divide = (a : number, b : number) => {
-    if (b === 0) b = 1;
+    if (b === 0)
+    {
+        b = 1;
+    }
     return a / b;
 };
