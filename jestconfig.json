@@ -1,6 +1,6 @@
 {
     "collectCoverage": true,
-    "coverageDirectory": "./out/coverage",
+    "coverageDirectory": "./dist/coverage",
     "coverageThreshold": {
         "global": {
             "branches": 100,
@@ -12,6 +12,6 @@
     "transform": {
       "^.+\\.(t|j)sx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
     "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
-  }
+}
