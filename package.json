@@ -24,6 +24,9 @@
     "url": "https://github.com/joelsummerfield/experiment.typescript-library/issues"
   },
   "homepage": "https://github.com/joelsummerfield/experiment.typescript-library#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -32,7 +35,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
