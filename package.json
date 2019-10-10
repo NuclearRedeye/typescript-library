@@ -2,9 +2,9 @@
   "name": "@joelsummerfield/experiment.typescript-library",
   "version": "1.0.2",
   "description": "An experiment looking into how to make a Typescript Library.",
-  "main": "./dist/lib/index.js",
+  "main": "dist/lib/index.js",
   "files": [
-    "./dist/lib/**/*"
+    "dist/lib/**/*"
   ],
   "scripts": {
     "build": "tsc",
