@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.1.1...v1.1.2) (2019-12-03)
+
+
+### Bug Fixes
+
+* publish on new tag ([6ffb3c0](https://github.com/joelsummerfield/experiment.typescript-library/commit/6ffb3c00fdad483c706b5ad693da1a6e9a22e699))
+
 ### [1.1.1](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.1.0...v1.1.1) (2019-12-03)
 
 ## [1.1.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.5...v1.1.0) (2019-12-03)
