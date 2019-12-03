@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.5...v1.1.0) (2019-12-03)
+
+
+### Features
+
+* initial support for github actions ([161193e](https://github.com/joelsummerfield/experiment.typescript-library/commit/161193e29d04a67d94f46f8082950c4e741c5724))
+
+
+### Bug Fixes
+
+* fails to run npm lint ([2e16b74](https://github.com/joelsummerfield/experiment.typescript-library/commit/2e16b74d00e941908234484925a3cc0100364c7e))
+* run publish only on tagged master branches ([4602480](https://github.com/joelsummerfield/experiment.typescript-library/commit/46024800f89ad00aa4624fee675e122f6cd40134))
+
 ### [1.0.5](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.4...v1.0.5) (2019-12-03)
 
 

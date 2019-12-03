@@ -1,9 +1,8 @@
 name: Node.js Publish to NPM
 
 on:
-  push:
-    tags:
-      - v*
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -20,7 +19,6 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-18.04
-    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
