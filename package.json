@@ -1,8 +1,8 @@
 {
   "name": "@joelsummerfield/experiment.typescript-library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An experiment looking into how to make a Typescript Library.",
-  "main": "dist/lib/index.js",
+  "main": "./dist/lib/index.js",
   "files": [
     "dist/lib/**/*"
   ],

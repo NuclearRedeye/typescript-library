@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.4...v1.0.5) (2019-12-03)
+
+
+### Bug Fixes
+
+* switch to using 'npm ci' for travis ([de780cb](https://github.com/joelsummerfield/experiment.typescript-library/commit/de780cb9c204ce8e07481ba2091e5b4eacedd306))
+
 ### [1.0.4](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.3...v1.0.4) (2019-10-10)
 
 ### [1.0.3](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.0.2...v1.0.3) (2019-10-10)
