@@ -1,0 +1,27 @@
+name: Fix code format issues
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  format:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Run Linter
+      - run: |
+          npm ci
+          npm run lint
+      - name: Run Formatter
+        if: failure()
+        run: |
+          npm run format
+          git config --global user.name 'Quality Control'
+          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git commit -am "fix: code formating issues"
+          git push
