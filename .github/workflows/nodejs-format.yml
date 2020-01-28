@@ -1,5 +1,5 @@
-# Automatically format files with Prettier
-name: Checks and formats files using the configured formatter
+# Checks and automatically formats code files
+name: Code Format and Style
 
 # Trigger ONLY on Pull Requests targeting the 'develop' branch.
 on:
@@ -8,7 +8,7 @@ on:
       - develop
 
 jobs:
-  prettier:
+  formatter:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
         if: failure()
         run: |
           npm run format-fix
-          git config --global user.name 'Libero QC'
+          git config --global user.name '${GITHUB_ACTOR}'
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
           git commit -am "fix: code formating issues"
           git push
