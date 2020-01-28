@@ -22,7 +22,6 @@ jobs:
       - name: Run Formatter
         if: failure()
         run: |
-          git status
           npm run format
           git config --global user.name 'Quality Control'
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
