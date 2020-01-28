@@ -1,29 +1,32 @@
-name: Fix code format issues
+# Automatically format files with Prettier
+name: Formats the code using Prettier
 
+# Trigger ONLY on Pull Requests targeting the 'develop' branch.
 on:
   pull_request:
     branches:
       - develop
 
 jobs:
-  format:
+  prettier:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        # Ensure the repo is cloned without a detached head!
         with:
           ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Run Linter
+      - name: Checking for formatting issues
         run: |
           npm ci
           npm run check
-      - name: Run Formatter
+      - name: If required, repair and commit
         if: failure()
         run: |
           npm run format
-          git config --global user.name 'Quality Control'
+          git config --global user.name 'Prettier'
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
           git commit -am "fix: code formating issues"
           git push
