@@ -20,6 +20,7 @@ jobs:
       - name: Run Formatter
         if: failure()
         run: |
+          git checkout "${GITHUB_REF:11}"
           npm run format
           git config --global user.name 'Quality Control'
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
