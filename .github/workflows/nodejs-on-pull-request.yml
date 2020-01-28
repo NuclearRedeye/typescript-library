@@ -2,7 +2,7 @@ name: Lint, Build and Test
 
 # Trigger ONLY on push/merge on develop branch
 on:
-  pull-request:
+  pull_request:
     branches:
       - develop
       - master
