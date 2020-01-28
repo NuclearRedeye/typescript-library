@@ -10,6 +10,7 @@
     "build": "tsc",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "check": "prettier --check \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "docs": "typedoc --out ./dist/docs/ --exclude **/*.test.ts ./src/",
     "release": "standard-version"
