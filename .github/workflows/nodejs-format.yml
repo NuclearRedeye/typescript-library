@@ -1,32 +1,39 @@
-# Checks and automatically formats code files
+# Checks and Automatically fixes Style and Formatting issues
+#
+# This action can be used to automatically fix code style and formatting issues
+# in Pull Requests, rather than rejecting them outright. The downside to this
+# approach is that to push further updates to the Pull Request will require you
+# to first fetch and rebase, which can be a bit confusing if you don't know what
+# is going on.
 name: Code Format and Style
 
 # Trigger ONLY on Pull Requests targeting the 'develop' branch.
 on:
-    pull_request:
-        branches:
-            - develop
+  pull_request:
+    branches:
+      - develop
 
 jobs:
-    formatter:
-        runs-on: ubuntu-18.04
-        steps:
-            - uses: actions/checkout@v2
-              # Ensure the repo is cloned without a detached head!
-              with:
-                  ref: ${{ github.event.pull_request.head.ref }}
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 12
-            - name: Checking for formatting issues
-              run: |
-                  npm ci
-                  npm run format
-            - name: If required, repair and commit
-              if: failure()
-              run: |
-                  npm run format-fix
-                  git config --global user.name ${GITHUB_ACTOR}
-                  git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
-                  git commit -am "fix: code formating issues"
-                  git push
+  formatter:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        # Ensure the repo is cloned without a detached head!
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Checking for formatting issues
+        run: |
+          npm ci
+          npm run format
+      - name: If required, repair and commit
+        if: failure()
+        # Fix the formatting issues, and then commit using the PR creators ID.
+        run: |
+          npm run format-fix
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
+          git commit -am "fix: code formating issues"
+          git push
