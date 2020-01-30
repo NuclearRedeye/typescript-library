@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.1.3...v1.3.0) (2020-01-30)
+
+
+### Features
+
+* automatically fix code style and formatting issues ([da06a90](https://github.com/joelsummerfield/experiment.typescript-library/commit/da06a90849e8893ca3d632e15b7201d9227061f9))
+* run lint, build and test on all pull requests ([835cc52](https://github.com/joelsummerfield/experiment.typescript-library/commit/835cc52225cc0e5c47a67234fc66c12b54a43a45))
+
+
+### Bug Fixes
+
+* add comments to formatting action ([912c7e5](https://github.com/joelsummerfield/experiment.typescript-library/commit/912c7e52f9f3a207fc5f6ca3a690723e367612bd))
+* cleanup of actions ([b9bc707](https://github.com/joelsummerfield/experiment.typescript-library/commit/b9bc707e1ea08c5f4436ebe8d7ccf7fd45533130))
+* remove support for travis ci ([35be844](https://github.com/joelsummerfield/experiment.typescript-library/commit/35be844b5d55f182643e0a7b5c28ae5455c64329))
+
 ## [1.2.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.1.3...v1.2.0) (2020-01-30)
 
 
