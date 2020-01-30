@@ -1,7 +1,6 @@
-# Runs Tests
 name: CI
 
-# Trigger ONLY on Pull Requests targeting the 'master' or 'develop' branches.
+# Trigger ONLY on Pull Requests targeting the 'master' branch.
 on:
   pull_request:
     branches:

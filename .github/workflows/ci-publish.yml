@@ -1,6 +1,6 @@
 name: CI
 
-# Trigger ONLY on specific tag
+# Trigger ONLY on new version tags
 on:
   push:
     tags:

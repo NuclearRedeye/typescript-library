@@ -1,13 +1,6 @@
-# Checks and Automatically fixes Style and Formatting issues
-#
-# This action can be used to automatically fix code style and formatting issues
-# in Pull Requests, rather than rejecting them outright. The downside to this
-# approach is that to push further updates to the Pull Request will require you
-# to first fetch and rebase, which can be a bit confusing if you don't know what
-# is going on.
 name: CI
 
-# Trigger ONLY on Pull Requests targeting the 'master' or 'develop' branches.
+# Trigger ONLY on Pull Requests targeting the 'master' branch.
 on:
   pull_request:
     branches:
