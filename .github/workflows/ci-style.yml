@@ -5,12 +5,13 @@
 # approach is that to push further updates to the Pull Request will require you
 # to first fetch and rebase, which can be a bit confusing if you don't know what
 # is going on.
-name: Code Style
+name: CI
 
-# Trigger ONLY on Pull Requests targeting the 'develop' branch.
+# Trigger ONLY on Pull Requests targeting the 'master' or 'develop' branches.
 on:
   pull_request:
     branches:
+      - master
       - develop
 
 jobs:
@@ -24,11 +25,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Checking style
+      - name: Setup
         run: |
           npm ci
+      - name: Checking
+        run: |
           npm run format
-      - name: Fix style and commit
+      - name: Fixing
         if: failure()
         # Fix the formatting issues, and then commit using the PR creators ID.
         run: |

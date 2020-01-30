@@ -1,0 +1,29 @@
+# Checks for code quality issues
+#
+# This action checks for code quality issues.
+name: CI
+
+# Trigger ONLY on Pull Requests targeting the 'master' or 'develop' branches.
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  quality:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        # Ensure the repo is cloned without a detached head!
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Setup
+        run: |
+          npm ci
+      - name: Checking
+        run: |
+          npm run lint

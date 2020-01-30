@@ -1,0 +1,33 @@
+name: CI
+
+# Trigger ONLY on PR merge onto 'master' branch
+on:
+  pull_request:
+    types: ['closed']
+    branches:
+      - master
+
+jobs:
+  tag:
+    runs-on: ubuntu-18.04
+    if: github.event.pull_request.merged
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: '${{ github.event.pull_request.base.ref }}'
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Setup
+        run: |
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
+          npm ci
+      - name: Tag
+        run: |
+          VERSION=$(npx -c 'echo "$npm_package_version"')
+          git tag v${VERSION}
+      - name: Commit
+        run: |
+          VERSION=$(npx -c 'echo "$npm_package_version"')
+          git push v${VERSION}

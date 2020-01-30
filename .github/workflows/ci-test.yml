@@ -1,16 +1,15 @@
-# Checks for code quality issues
-#
-# This action checks for code quality issues.
-name: Code Quality
+# Runs Tests
+name: CI
 
-# Trigger ONLY on Pull Requests targeting the 'develop' branch.
+# Trigger ONLY on Pull Requests targeting the 'master' or 'develop' branches.
 on:
   pull_request:
     branches:
+      - master
       - develop
 
 jobs:
-  quality:
+  test:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +19,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Checking for quality issues
+      - name: Setup
         run: |
           npm ci
-          npm run lint
+      - name: Checking
+        run: |
+          npm run test
