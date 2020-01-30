@@ -14,12 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: '${{ github.event.pull_request.base.ref }}'
       - uses: actions/setup-node@v1
         with:
           node-version: 12
       - name: Setup
         run: |
+          git status
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
       - name: Install Dependencies
