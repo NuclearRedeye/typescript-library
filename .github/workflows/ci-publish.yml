@@ -1,0 +1,24 @@
+name: CI
+
+# Trigger ONLY on PR merge onto 'master' branch
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies
+        run: |
+          npm ci
+      - name: Publish
+        run: |
+          npm publish --tag 'stable'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

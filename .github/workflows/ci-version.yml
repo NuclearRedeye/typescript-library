@@ -1,26 +1,24 @@
-name: Release
+name: CI
 
 # Trigger ONLY on PR merge onto 'master' branch
 on:
   pull_request:
-    types: ['closed']
+    types: ['opened']
     branches:
       - master
 
 jobs:
-  release:
+  version:
     runs-on: ubuntu-18.04
-    if: github.event.pull_request.merged
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: '${{ github.event.pull_request.base.ref }}'
+          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: 12
       - name: Setup
         run: |
-          git status
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
       - name: Install Dependencies
@@ -29,11 +27,4 @@ jobs:
       - name: Version
         run: |
           npm run release
-      - name: Commit
-        run: |
-          git push --follow-tags
-      - name: Publish
-        run: |
-          npm publish --tag 'stable'
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          git push
