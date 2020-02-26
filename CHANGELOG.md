@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.3.1...v1.4.0) (2020-02-26)
+
+
+### Features
+
+* refactor into template repository ([5ed545f](https://github.com/joelsummerfield/experiment.typescript-library/commit/5ed545fb37357cedb886c8db4ba1beee4e142327))
+
 ### [1.3.1](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.3.0...v1.3.1) (2020-01-30)
 
 
