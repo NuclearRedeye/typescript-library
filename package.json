@@ -2,6 +2,7 @@
   "name": "@nuclearredeye/typescript-library",
   "version": "1.4.0",
   "description": "A Typescript Library template that can be used as a seed for new projects.",
+  "type": "module",
   "main": "./dist/lib/index.js",
   "files": [
     "dist/lib/**/*"
