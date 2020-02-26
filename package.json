@@ -3,12 +3,13 @@
   "version": "1.4.0",
   "description": "A Typescript Library template that can be used as a seed for new projects.",
   "type": "module",
-  "main": "./dist/lib/index.js",
+  "main": "./dist/lib/typescript-library.js",
+  "types": "./dist/lib/typescript-library.d.ts",
   "files": [
     "dist/lib/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && rollup -c",
     "test": "jest --config jestconfig.json",
     "format": "prettier --check \"src/**/*.ts\" \"src/**/*.js\"",
     "format-fix": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
@@ -51,6 +52,8 @@
     "husky": "^3.1.0",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-dts": "^1.2.1",
     "standard-version": "^7.1.0",
     "ts-jest": "^25.2.1",
     "tslint": "^5.20.1",
