@@ -17,15 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joelsummerfield/experiment.typescript-library.git"
+    "url": "git+https://github.com/nuclearredeye/typescript-library.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "NuclearRedeye",
+    "email": "github@mneah.com"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joelsummerfield/experiment.typescript-library/issues"
+    "url": "https://github.com/nuclearredeye/typescript-library/issues"
   },
-  "homepage": "https://github.com/joelsummerfield/experiment.typescript-library#readme",
+  "homepage": "https://github.com/nuclearredeye/typescript-library#readme",
   "publishConfig": {
     "access": "public"
   },
