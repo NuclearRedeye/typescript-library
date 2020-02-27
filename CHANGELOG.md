@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/nuclearredeye/typescript-library/compare/v1.4.0...v1.5.0) (2020-02-27)
+
+
+### Features
+
+* bundle library using rollup ([bef2683](https://github.com/nuclearredeye/typescript-library/commit/bef26836f8661c9a1bb97076a4a1f46a496e8bb9))
+* update to build as es module ([d8a820d](https://github.com/nuclearredeye/typescript-library/commit/d8a820dda1d9bb067f156ee89bdcf97f43f24ca0))
+
+
+### Bug Fixes
+
+* break library into seperate files ([617895f](https://github.com/nuclearredeye/typescript-library/commit/617895f26c5cd7ce608665d2e17db1a72fe83cb6))
+* ci running twice on pr ([d1693e8](https://github.com/nuclearredeye/typescript-library/commit/d1693e8414eb4796e824a971b8d6250285377e62))
+
 ## [1.4.0](https://github.com/joelsummerfield/experiment.typescript-library/compare/v1.3.1...v1.4.0) (2020-02-26)
 
 
