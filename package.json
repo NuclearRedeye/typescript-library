@@ -9,6 +9,8 @@
     "dist/lib/**/*"
   ],
   "scripts": {
+    "clean": "rm -rf build dist",
+    "distclean": "rm -rf node_modules && npm run clean",
     "build": "tsc && rollup -c",
     "test": "jest --config jestconfig.json",
     "format": "prettier --check \"src/**/*.ts\" \"src/**/*.js\"",
