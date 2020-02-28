@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script type="module">
+      import { Add, Subtract, Multiply, Divide } from './typescript-library.min.js';
+
+      window.onload = () => {
+        console.log(`2 + 2 = ${Add(2, 2)}`);
+        console.log(`2 - 2 = ${Subtract(2, 2)}`);
+        console.log(`2 * 2 = ${Multiply(2, 2)}`);
+        console.log(`2 / 2 = ${Divide(2, 2)}`);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Simple example showing how to make use of the library from the browser</h1>
+  </body>
+</html>
