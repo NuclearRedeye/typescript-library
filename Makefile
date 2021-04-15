@@ -15,6 +15,7 @@ TS := $(shell find ./src -type f -name *.ts)
         lint \
         format \
         test \
+				docs \
         debug \
         release
 
@@ -36,7 +37,7 @@ node_modules: package.json package-lock.json
 	@touch node_modules
 
 # Target to create the output directories.
-out/debug out/release:
+out/debug out/release out/docs:
 	@echo "Creating $@..."
 	@mkdir -p $(CURDIR)/$@
 
@@ -53,12 +54,17 @@ out/release/index.js: out/release out/debug/index.js
 # Target that minifies the JavaScript.
 out/release/index.min.js: out/release out/release/index.js
 	@echo "Creating $@..."
-	@$(DOCKER) node:$(NODE_VERSION) npx terser -c -m -o out/release/index.js $@
+	@$(DOCKER) node:$(NODE_VERSION) npx terser -c -m -o $@ ./out/release/index.js
 
 # Target that bundles the TypeScript definitions.
 out/release/index.d.ts: out/release out/debug/index.js
 	@echo "Creating $@..."
-	@$(DOCKER) node:$(NODE_VERSION) npx terser -c -m -o out/release/index.js $@
+	@$(DOCKER) node:$(NODE_VERSION) npx rollup --config
+
+# Target that generates the API documentation.
+out/docs/index.html: $(TS)
+	@echo "Creating $@..."
+	@$(DOCKER) node:$(NODE_VERSION) npx typedoc --out ./out/docs/ --exclude **/*.test.ts --exclude **/*.spec.ts ./src/
 
 # Target that checks the code for style/formating issues.
 format: node_modules
@@ -74,6 +80,9 @@ lint: node_modules
 test: node_modules
 	@echo "Running unit tests..."
 	@$(DOCKER) node:$(NODE_VERSION) npx jest
+
+# Target that generates the API documentation.
+docs: out/docs/index.html
 
 # Target that builds a debug/development version of the app
 debug: out/debug out/debug/index.js 

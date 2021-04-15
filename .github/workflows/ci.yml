@@ -27,7 +27,7 @@ jobs:
       - name: Test
         run: |
           npm run test
-      # Only publish for a tagged release that starts with a lower
+      # Only publish for a tagged release that starts with a lowercase v
       - name: Publish
         if: startsWith(github.ref, 'refs/tags/v')
         run: |

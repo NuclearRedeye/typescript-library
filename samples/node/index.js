@@ -1,4 +1,4 @@
-import { Add, Subtract, Multiply, Divide } from '../../dist/lib/typescript-library.js';
+import { Add, Subtract, Multiply, Divide } from './index.js';
 
 console.log(`2 + 2 = ${Add(2, 2)}`);
 console.log(`2 - 2 = ${Subtract(2, 2)}`);
