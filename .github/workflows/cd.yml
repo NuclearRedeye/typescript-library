@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo make release
       # Only publish for a tagged release that starts with a lowercase v
-      - name: Publish
+      - name: Publish to npmjs.com
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           make publish
