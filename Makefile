@@ -38,7 +38,7 @@ node_modules: package.json package-lock.json
 	@touch node_modules
 
 # Target to create the output directories.
-out/debug out/release out/docs:
+out/debug out/release:
 	@echo "Creating $@..."
 	@mkdir -p $(CURDIR)/$@
 

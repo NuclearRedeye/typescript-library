@@ -20,6 +20,9 @@ jobs:
       - name: Checking unit tests pass
         run: |
           make test
+      - name: Checking documentation builds
+        run: |
+          make docs
       - name: Checking 'debug' code builds
         run: |
           sudo make debug
