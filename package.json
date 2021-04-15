@@ -8,9 +8,6 @@
   "files": [
     "out/release/**/*"
   ],
-  "scripts": {
-    "release": "standard-version"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NuclearRedeye/typescript-library.git"
