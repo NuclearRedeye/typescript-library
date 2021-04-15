@@ -1,7 +1,6 @@
 
 PROJECT := $(notdir $(CURDIR))
 NODE_VERSION ?= fermium
-PORT ?= 8080
 
 # Build commands
 DOCKER := docker run --rm -w=/$(PROJECT) -v $(CURDIR):/$(PROJECT):rw
@@ -17,7 +16,8 @@ TS := $(shell find ./src -type f -name *.ts)
         test \
 				docs \
         debug \
-        release
+        release \
+				version
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := debug
@@ -61,7 +61,7 @@ out/release/index.d.ts: out/release out/debug/index.js
 	@echo "Creating $@..."
 	@$(DOCKER) node:$(NODE_VERSION) npx rollup --config
 
-# Target that generates the API documentation.
+# Target that builds the documentation
 out/docs/index.html: $(TS)
 	@echo "Creating $@..."
 	@$(DOCKER) node:$(NODE_VERSION) npx typedoc --out ./out/docs/ --exclude **/*.test.ts --exclude **/*.spec.ts ./src/
@@ -89,3 +89,8 @@ debug: out/debug out/debug/index.js
 
 # Target that builds a release version of the app
 release: out/release out/release/index.js out/release/index.min.js out/release/index.d.ts
+
+# Target to bump and tag the packages version number
+version: node_modules
+	@echo "Bumping package version..."
+	@$(DOCKER) node:$(NODE_VERSION) npx standard-version
