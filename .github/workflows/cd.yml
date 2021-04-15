@@ -1,0 +1,35 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checking code for styling issues
+        run: |
+          make format
+      - name: Checking code for linting issues
+        run: |
+          make lint
+      - name: Checking unit tests pass
+        run: |
+          make test
+      - name: Checking 'debug' code builds
+        run: |
+          sudo make debug
+      - name: Checking 'release' code builds
+        run: |
+          sudo make release
+      # Only publish for a tagged release that starts with a lowercase v
+      - name: Publish
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          make publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

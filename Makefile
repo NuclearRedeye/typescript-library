@@ -17,7 +17,8 @@ TS := $(shell find ./src -type f -name *.ts)
 				docs \
         debug \
         release \
-				version
+				version \
+				publish
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := debug
@@ -94,3 +95,8 @@ release: out/release out/release/index.js out/release/index.min.js out/release/i
 version: node_modules
 	@echo "Bumping package version..."
 	@$(DOCKER) node:$(NODE_VERSION) npx standard-version
+
+# Target to publish the package to npm
+publish: node_modules
+	@echo "Bumping package version..."
+	@$(DOCKER) -e NODE_AUTH_TOKEN node:$(NODE_VERSION) npm publish
