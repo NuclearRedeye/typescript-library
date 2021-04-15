@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/NuclearRedeye/typescript-library/compare/v1.5.0...v1.6.0) (2021-04-15)
+
+
+### Features
+
+* update to use a docker based build system ([#23](https://github.com/NuclearRedeye/typescript-library/issues/23)) ([b5d9628](https://github.com/NuclearRedeye/typescript-library/commit/b5d9628c28b81e56d3f4301f43330bc697a0c828))
+
 ## [1.5.0](https://github.com/nuclearredeye/typescript-library/compare/v1.4.0...v1.5.0) (2020-02-27)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@nuclearredeye/typescript-library",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A Typescript Library template that can be used as a seed for new projects.",
   "type": "module",
   "main": "./out/release/index.js",
