@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/NuclearRedeye/typescript-library/compare/v1.6.0...v1.6.1) (2021-04-15)
+
+
+### Bug Fixes
+
+* action not running on tags ([738c455](https://github.com/NuclearRedeye/typescript-library/commit/738c455c404000591658ca74d1cf5ae3ab4716ff))
+
 ## [1.6.0](https://github.com/NuclearRedeye/typescript-library/compare/v1.5.0...v1.6.0) (2021-04-15)
 
 
