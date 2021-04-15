@@ -1,4 +1,4 @@
-import { Add, Divide, Multiply, Subtract } from '../src/index';
+import { Add, Divide, Multiply, Subtract } from './index';
 
 test('Add', () => {
   expect(Add(1, 1)).toBe(2);
