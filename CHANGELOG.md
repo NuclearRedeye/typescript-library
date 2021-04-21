@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://github.com/NuclearRedeye/typescript-library/compare/v1.6.1...v1.6.2) (2021-04-21)
+
+
+### Bug Fixes
+
+* can't publish to npm from ci ([2bbf148](https://github.com/NuclearRedeye/typescript-library/commit/2bbf1483228d0737420114de1344a9ee806298c9))
+
 ### [1.6.1](https://github.com/NuclearRedeye/typescript-library/compare/v1.6.0...v1.6.1) (2021-04-15)
 
 
