@@ -14,10 +14,10 @@ TS := $(shell find ./src -type f -name *.ts)
         lint \
         format \
         test \
-				docs \
+        docs \
         debug \
         release \
-				version
+        version
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := debug
