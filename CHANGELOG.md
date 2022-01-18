@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.3](https://github.com/NuclearRedeye/typescript-library/compare/v1.6.2...v1.6.3) (2022-01-18)
+
+
+### Bug Fixes
+
+* dependabot configuration ([80054b6](https://github.com/NuclearRedeye/typescript-library/commit/80054b6279d98299b95eb58bbb7547d734226ed1))
+
 ### [1.6.2](https://github.com/NuclearRedeye/typescript-library/compare/v1.6.1...v1.6.2) (2021-04-21)
 
 
